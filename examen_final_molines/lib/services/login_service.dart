@@ -26,6 +26,7 @@ class LoginService {
       return userCredential.user;
     } catch (e) {
       print("Error al registrar usuario: $e");
+
       return null;
     }
   }
