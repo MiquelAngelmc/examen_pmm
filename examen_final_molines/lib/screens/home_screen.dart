@@ -4,10 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 //import '../../models/vehicle_model.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Vehículos Disponibles")),
+      appBar: AppBar(title: Text("Objetos disponibles")),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('vehicles').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

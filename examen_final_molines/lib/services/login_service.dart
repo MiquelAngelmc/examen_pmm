@@ -5,10 +5,10 @@ class LoginService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Método para iniciar sesión con email y contraseña
-  Future<User?> loginWithEmail(String usuari, String password) async {
+  Future<User?> loginWithEmail(String email, String password) async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-        email: usuari,
+        email: email,
         password: password,
       );
       return userCredential.user; // Retorna el usuario autenticado
@@ -26,7 +26,6 @@ class LoginService {
       return userCredential.user;
     } catch (e) {
       print("Error al registrar usuario: $e");
-
       return null;
     }
   }
